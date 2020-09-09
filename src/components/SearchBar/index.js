@@ -79,8 +79,8 @@ class SearchBar extends React.Component {
   render() {
     const { history, location } = this.props;
     return (
-      <div className="searchbar" onClick="" ref={this.wrapperRef}>
-        <div id="search">
+      <div className="searchbar" ref={this.wrapperRef}>
+        <div id="search" className={this.state.activeState ? "active" : ""}>
           <FontAwesomeIcon icon={faSearch} id="search-icon" />
           <form
             onSubmit={() => {
@@ -92,7 +92,7 @@ class SearchBar extends React.Component {
               type="text"
               id="search-input"
               name="search"
-              autocomplete="off"
+              autoComplete="off"
               className={this.state.activeState ? "active" : ""}
               value={this.state.inputState}
               onChange={(e) =>
